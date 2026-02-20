@@ -30,13 +30,14 @@ int main()
             
         // the if statments cycling from 0-9     
         if (i == 9)
-        {
+        {       //read out array index number 9 specificly
                 cout << array_numbers[i] << endl;
                 
 
         }
+        //if it isnt index number 9
         else if(i != 9)
-        {
+        {   // read out each indexs number and add a comma
             cout << array_numbers[i] <<",";
         }
 
