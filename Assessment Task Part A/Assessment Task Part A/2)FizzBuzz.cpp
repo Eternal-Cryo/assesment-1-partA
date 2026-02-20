@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 
@@ -24,10 +25,11 @@ int main()
 {
 	// just to get the players number 
 	int player_number = 0;
-	
+	string exit = "";
 
-	// just so it loops 10 times
-		for (int i = 0; i < 10; i++)
+	// while loop to loop until exit
+		while  (exit != "exit")
+
 		{ // getting a number from the player	
 		cout << "input a number from 1-20" << endl;
 		cin >> player_number;
@@ -37,6 +39,8 @@ int main()
 		{// this statment checks if the number can be divisable by 3 and 5 and the result is a whole nuber 
 		// %3 == 0 checks to see if the number is divisible by the %
 			
+
+			// if statment checking if the number can be divided my 3 and 5
 			if (( player_number % 3 == 0) && ( player_number % 5 == 0))
 			{
 
@@ -70,6 +74,13 @@ int main()
 			cout << "thats not a number within 1-20" << endl << "-----------------------------------------------" << endl;
 
 		}
+
+
+		//asking if the player is ready to end program
+		cout << "want to try another number or exit" << endl;
+		cin >> exit;
+
+
 
 	}
 	
