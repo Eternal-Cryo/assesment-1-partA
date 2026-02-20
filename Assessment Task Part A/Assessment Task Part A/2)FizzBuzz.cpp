@@ -30,7 +30,7 @@ int main()
 	// while loop to loop until exit
 		while  (exit != "exit")
 
-		{ // getting a number from the player	
+		{ // getting a number from the player due not it doesnt like anything but numbers
 		cout << "input a number from 1-20" << endl;
 		cin >> player_number;
 
