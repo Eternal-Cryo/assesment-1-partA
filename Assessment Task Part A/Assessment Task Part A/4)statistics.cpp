@@ -16,59 +16,59 @@ using namespace std;
 //Commit this to version control.
 
 
-//int main()
-//{	
-//		//used to recite the infomation the player gives
-//		int percent = 0;
-//		float hit = 0;
-//		float totalfired = 0;
-//		string userInput = "";
-//		
-// 
-//		//a simple while loop to keep the sample repeating until the player wants to go
-//		while (userInput != "exit")
-//		{
-//
-//			//grabbing the infomation from the player on their accuracy
-//			cout << "how many did you get on target?" << endl;
-//			cin >> hit;
-//			cout << "how many did you fire?" << endl;
-//			cin >> totalfired;
-//
-//			//to see if they fired any shost rounds
-//			if (hit > totalfired)
-//			{
-//				cout << "it doesn't work like that." << endl;
-//
-//
-//			}
-//			//to see if the player fire nothing or somehow brang a round back into the rifle
-//			else if (totalfired <= 0)
-//			{
-//
-//				cout << "your accuracy is 0%" << endl;
-//			}
-//
-//
-//
-//			//if both numbers are acceptible run this
-//			else if (totalfired > 0)
-//			{
-//				//using floats allows us to divide the two given numbers 
-//				//then timesing by 100 gets us a percentage with decimals 
-//				//the percent is an int so itll only accept whole numbers 
-//				percent = ((hit / totalfired) * 100);
-//
-//
-//				cout << "your accuracy is " << percent << "%" << endl;
-//
-//
-//			}
-//
-//			// to keep the loop going or to stop it
-//			cout << "would you like to go again?" << endl;
-//			cin >> userInput;
-//		}
-//		
-//	cout << "--------- end of code---------" << endl;
-//}
+int main()
+{	
+		//used to recite the infomation the player gives
+		int percent = 0;
+		float hit = 0;
+		float totalfired = 0;
+		string userInput = "";
+		
+ 
+		//a simple while loop to keep the sample repeating until the player wants to go
+		while (userInput != "exit")
+		{
+
+			//grabbing the infomation from the player on their accuracy
+			cout << "how many did you get on target?" << endl;
+			cin >> hit;
+			cout << "how many did you fire?" << endl;
+			cin >> totalfired;
+
+			//to see if they fired any shost rounds
+			if (hit > totalfired)
+			{
+				cout << "it doesn't work like that." << endl;
+
+
+			}
+			//to see if the player fire nothing or somehow brang a round back into the rifle
+			else if (totalfired <= 0)
+			{
+
+				cout << "your accuracy is 0%" << endl;
+			}
+
+
+
+			//if both numbers are acceptible run this
+			else if (totalfired > 0)
+			{
+				//using floats allows us to divide the two given numbers 
+				//then timesing by 100 gets us a percentage with decimals 
+				//the percent is an int so itll only accept whole numbers 
+				percent = ((hit / totalfired) * 100);
+
+
+				cout << "your accuracy is " << percent << "%" << endl;
+
+
+			}
+
+			// to keep the loop going or to stop it
+			cout << "would you like to go again?" << endl;
+			cin >> userInput;
+		}
+		
+	cout << "--------- end of code---------" << endl;
+}
