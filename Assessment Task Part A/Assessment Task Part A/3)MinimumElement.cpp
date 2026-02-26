@@ -33,18 +33,23 @@ int main()
         // if it is smaller that the smallest current number
                 if (number_array[i] <= current_smallest)
         {
+
+             // reading out the array number 
             cout << "---------------------------------- " << endl;
             cout << "array current is " << number_array[i] << endl;
 
+
+            // setting the smallest number from the array index
             current_smallest = number_array[i];
             cout << "the current smallest is " << current_smallest << endl;
-
             cout << "---------------------------------- " << endl;
         }
 
         // if it isn't smaller than the current smallest 
         else if (number_array[i] >= current_smallest)
         {
+
+            // just saying that the number isn't smaller than the one that is set as the current smallest 
             cout << "---------------------------------- " << endl;
             cout << "array current  " << number_array[i] << endl;
             cout << "the current smallest is " << current_smallest << endl;
