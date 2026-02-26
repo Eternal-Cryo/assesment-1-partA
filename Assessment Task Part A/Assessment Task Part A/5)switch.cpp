@@ -133,7 +133,7 @@ struct player {
 	
 	// the reporting system to house all of the cases that could be called apon and mainly tells the player what has been used and what stat has been buffed the most 
 	void player_Report(potion_types msg) {
-
+		//depending on the case used it reads out the players number then the changed main stat 
 		switch (msg) {
 		case (potion_types::HEALTH):
 			cout << "   ---report--- player  " << id << " health boost  " << health << endl;
@@ -159,7 +159,7 @@ struct player {
 
 			break;
 
-			//just reports all the stats to the player 
+			//just reports all the stats to the player to show all the stat changes and not just one 
 		case (potion_types::REPORT):
 			cout << "   ---report--- player  " << id << " current stats" << endl;
 			cout << "player health " << health << endl;
@@ -210,6 +210,10 @@ int main()
 	player01.magic_potion(player01);
 
 
+
+
+
+	cout << " thanks for playing " << endl;
 	cout << "---------- end of code ----------" << endl;
 }
 
