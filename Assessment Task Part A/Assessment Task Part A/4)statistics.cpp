@@ -70,5 +70,9 @@ int main()
 			cin >> userInput;
 		}
 		
+
+
+
+		cout << "thanks for playing" << endl;
 	cout << "--------- end of code---------" << endl;
 }
