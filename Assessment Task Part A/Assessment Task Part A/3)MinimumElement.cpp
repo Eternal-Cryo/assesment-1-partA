@@ -57,6 +57,8 @@ int main()
        }
             
     }
+
+
     //reciting the smallest number and ending the code
     cout << "the  smallest number was " << current_smallest << endl;
     cout << "--------- end of code---------" << endl;
