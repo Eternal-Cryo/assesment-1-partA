@@ -19,6 +19,62 @@ using namespace std;
 //Test and commit this to version control.
 
 
+//fizzbuzz void function using the number that the player gives 
+void fizzBuzz(int playerNumber)
+{
+	//checking if its within 1-20 only requires the above zero if you want to use numbers higher than 20
+	if ((playerNumber < 20) && (playerNumber > 0))
+	{// this statment checks if the number can be divisable by 3 and 5 and the result is a whole nuber 
+	// %3 == 0 checks to see if the number is divisible by the %
+
+
+		// if statment checking if the number can be divided my 3 and 5
+		if ((playerNumber % 3 == 0) && (playerNumber % 5 == 0))
+		{
+
+
+			cout << playerNumber << " is divisible by both 5 and 3 " << "fizzbuzz!" << endl;
+
+		}
+		//divisible by 5
+		else if (playerNumber % 5 == 0)
+		{
+			cout << playerNumber << " is divisible by  5 " << "buzz!" << endl;
+
+		}
+		//divisible by 3
+		else if (playerNumber % 3 == 0)
+		{
+			cout << playerNumber << " is divisible by  3 " << "fizz!" << endl;
+
+		}
+		//if not divisible by any
+		else if (playerNumber)
+		{
+			cout << playerNumber << " is not divisible by 3 or 5" << endl;
+
+		}
+
+	}
+	// if the number isnt between 1-20 remove the first part if you want to use numbers above 20
+	else if ((playerNumber > 20) || (playerNumber < 0))
+	{
+		cout << "thats not a number within 1-20" << endl << "-----------------------------------------------" << endl;
+
+	}
+
+
+
+
+
+}
+
+
+
+
+
+
+
 
 
 int main()			
@@ -34,46 +90,9 @@ int main()
 		cout << "input a number from 1-20" << endl;
 		cin >> player_number;
 
-		//checking if its within 1-20 only requires the above zero if you want to use numbers higher than 20
-		if ((player_number < 20) && (player_number > 0))
-		{// this statment checks if the number can be divisable by 3 and 5 and the result is a whole nuber 
-		// %3 == 0 checks to see if the number is divisible by the %
-			
 
-			// if statment checking if the number can be divided my 3 and 5
-			if (( player_number % 3 == 0) && ( player_number % 5 == 0))
-			{
-
-
-				cout << player_number << " is divisible by both 5 and 3 " << "fizzbuzz!" << endl;
-
-			}
-			//divisible by 5
-			else if ( player_number % 5 == 0)
-			{
-				cout << player_number << " is divisible by  5 " << "buzz!" << endl;
-
-			}
-			//divisible by 3
-			else if ( player_number % 3 == 0)
-			{
-				cout << player_number << " is divisible by  3 " << "fizz!" << endl;
-
-			}
-			//if not divisible by any
-			else if (player_number)
-			{
-				cout << player_number << " is not divisible by 3 or 5" << endl;
-
-			}
-
-		}
-		// if the number isnt between 1-20 remove the first part if you want to use numbers above 20
-		else if ((player_number > 20) || (player_number < 0))
-		{
-			cout << "thats not a number within 1-20" << endl << "-----------------------------------------------" << endl;
-
-		}
+		//calling the funtion and giving it the number
+		fizzBuzz(player_number);
 
 
 		//asking if the player is ready to end program
