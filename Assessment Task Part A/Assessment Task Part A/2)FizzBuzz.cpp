@@ -84,6 +84,13 @@ int main()
 	string exit = "";
 
 	// while loop to loop until exit
+	fizzBuzz(7);
+	fizzBuzz(3);
+	fizzBuzz(5);
+	fizzBuzz(15);
+	
+
+
 		while  (exit != "exit")
 
 		{ // getting a number from the player due not it doesnt like anything but numbers
