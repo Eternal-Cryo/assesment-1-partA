@@ -14,26 +14,10 @@ using namespace std;
 //0, 0 =	0
 //Ensure all asserts() pass when you build and run.
 //Commit this to version control.
-
-
-int main()
-{	
-		//used to recite the infomation the player gives
+void accuracy(float hit, float totalfired )
+{
 		int percent = 0;
-		float hit = 0;
-		float totalfired = 0;
-		string userInput = "";
 		
- 
-		//a simple while loop to keep the sample repeating until the player wants to go
-		while (userInput != "exit")
-		{
-
-			//grabbing the infomation from the player on their accuracy
-			cout << "how many did you get on target?" << endl;
-			cin >> hit;
-			cout << "how many did you fire?" << endl;
-			cin >> totalfired;
 
 			//to see if they fired any shost rounds
 			if (hit > totalfired)
@@ -64,6 +48,39 @@ int main()
 
 
 			}
+
+
+
+
+
+}
+
+int main()
+{	
+		//used to recite the infomation the player gives
+		
+		string userInput = "";
+		float hit = 0;
+		float totalfired = 0;
+
+
+		
+		accuracy(3, 4);
+		accuracy(1, 2);
+		accuracy(13, 13);
+		accuracy(21, 173);
+		accuracy(0, 0);
+
+		//a simple while loop to keep the sample repeating until the player wants to go
+		while (userInput != "exit")
+		{
+			//grabbing the infomation from the player on their accuracy
+			cout << "how many did you get on target?" << endl;
+			cin >> hit;
+			cout << "how many did you fire?" << endl;
+			cin >> totalfired;
+
+			accuracy(hit, totalfired);
 
 			// to keep the loop going or to stop it
 			cout << "would you like to go again?" << endl;
