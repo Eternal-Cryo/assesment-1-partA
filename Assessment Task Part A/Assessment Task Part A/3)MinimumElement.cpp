@@ -13,54 +13,85 @@ using namespace std;
     //    Test and commit this to version control.
 
 
+void smallest(int array[], int arraySize)
+{   
+    
+    int i = 0;
+    int current_smallest = 0;
+    current_smallest = array[i];
+   
+ 
+        // looping it for the amount of numbers given 
+    for ( i = 0; i < arraySize; i++)
+    {   
+        
+        
+        // if it is smaller that the smallest current number
+        if (array[i] <= current_smallest)
+        {
+
+            // reading out the array number 
+            cout << "---------------------------------- " << endl;
+            cout << "array current is " << array[i] << endl;
+
+
+            // setting the smallest number from the array index
+            current_smallest = array[i];
+            cout << "the current smallest is " << current_smallest << endl;
+            cout << "---------------------------------- " << endl;
+        }
+
+        // if it isn't smaller than the current smallest 
+        else if (array[i] >= current_smallest)
+        {
+
+            // just saying that the number isn't smaller than the one that is set as the current smallest 
+            cout << "---------------------------------- " << endl;
+            cout << "array current  " << array[i] << endl;
+            cout << "the current smallest is " << current_smallest << endl;
+            cout << "---------------------------------- " << endl;
+        }
+
+    }
+
+
+    //reciting the smallest number and ending the code
+    cout << "the  smallest number was " << current_smallest << endl;
+   
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int main()
 {
 
     
         
     // all numbers given in an array
-    int number_array[20]{ 67, 13, 3, 89, 43, 2, 19, 71, 5, 61, 97, 7, 37, 31, 17, 11, 83, 53, 23, 29 };
+    int number_array[]{ 67, 13, 3, 89, 43, 2, 19, 71, 5, 61, 97, 7, 37, 31, 17, 11, 83, 53, 23, 29 };
     // keeping track of the smallest 
-    int current_smallest = 0;
-    //just to set the current smallest at the start
-    int i = 0;
+    
+   
 
-    current_smallest = number_array[i];
-
-    // looping it for the amount of numbers given 
-    for( i = 0; i < 20; i++)
-    {
-        // if it is smaller that the smallest current number
-                if (number_array[i] <= current_smallest)
-        {
-
-             // reading out the array number 
-            cout << "---------------------------------- " << endl;
-            cout << "array current is " << number_array[i] << endl;
+   
+    smallest(number_array, 20);
+    
+    
 
 
-            // setting the smallest number from the array index
-            current_smallest = number_array[i];
-            cout << "the current smallest is " << current_smallest << endl;
-            cout << "---------------------------------- " << endl;
-        }
-
-        // if it isn't smaller than the current smallest 
-        else if (number_array[i] >= current_smallest)
-        {
-
-            // just saying that the number isn't smaller than the one that is set as the current smallest 
-            cout << "---------------------------------- " << endl;
-            cout << "array current  " << number_array[i] << endl;
-            cout << "the current smallest is " << current_smallest << endl;
-            cout << "---------------------------------- " << endl;
-       }
-            
-    }
-
-
-    //reciting the smallest number and ending the code
-    cout << "the  smallest number was " << current_smallest << endl;
+   
+    
     cout << "--------- end of code---------" << endl;
     return 0;
 }
