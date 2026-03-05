@@ -22,7 +22,7 @@ void accuracy(float hit, float totalfired )
 			//to see if they fired any shost rounds
 			if (hit > totalfired)
 			{
-				cout << "it doesn't work like that." << endl;
+				std::cout << "it doesn't work like that." << endl;
 
 
 			}
@@ -30,7 +30,7 @@ void accuracy(float hit, float totalfired )
 			else if (totalfired <= 0)
 			{
 
-				cout << "your accuracy is 0%" << endl;
+				std::cout << "your accuracy is 0%" << endl;
 			}
 
 
@@ -44,7 +44,7 @@ void accuracy(float hit, float totalfired )
 				percent = ((hit / totalfired) * 100);
 
 
-				cout << "your accuracy is " << percent << "%" << endl;
+				std::cout << "your accuracy is " << percent << "%" << endl;
 
 
 			}
@@ -75,21 +75,21 @@ int main()
 		while (userInput != "exit")
 		{
 			//grabbing the infomation from the player on their accuracy
-			cout << "how many did you get on target?" << endl;
-			cin >> hit;
-			cout << "how many did you fire?" << endl;
-			cin >> totalfired;
+			std::cout << "how many did you get on target?" << endl;
+			std::cin >> hit;
+			std::cout << "how many did you fire?" << endl;
+			std::cin >> totalfired;
 
 			accuracy(hit, totalfired);
 
 			// to keep the loop going or to stop it
-			cout << "would you like to go again?" << endl;
-			cin >> userInput;
+			std::cout << "would you like to go again?" << endl;
+			std::cin >> userInput;
 		}
 		
 
 
 
-		cout << "thanks for playing" << endl;
-	cout << "--------- end of code---------" << endl;
+		std::cout << "thanks for playing" << endl;
+		std::cout << "--------- end of code---------" << endl;
 }
