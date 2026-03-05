@@ -59,7 +59,7 @@ struct player {
 	void Health_potion(player) {
 	 
 
-		cout << "applying health potion " << endl;
+		std::cout << "applying health potion " << endl;
 		health = 100; // stat changes 
 
 		//calls for the changes to the stats 
@@ -71,7 +71,7 @@ struct player {
 
 //	SPEED : sets speed to 50, health reduced by 10, strength reduced by 10, magic set to 10
 	void speed_potion(player) {
-		cout << "applying speed potion " << endl;
+		std::cout << "applying speed potion " << endl;
 		
 		//propper stat changes having it like this allows for multiple effects to be active at once 
 		health -= 10;
@@ -87,7 +87,7 @@ struct player {
 //	STRENGTH : sets speed to 25, health multiplied by 2, strength set to 200
 
 	void strength_potion(player) {
-		cout << "applying strength potion " << endl;
+		std::cout << "applying strength potion " << endl;
 		health = (health * 2);
 		speed = 25;
 		strength = 200;
@@ -99,7 +99,7 @@ struct player {
 	
 	//	MAGIC sets strength to 10, magic set to 100
 	void magic_potion(player) {
-		cout << "applying magic potion " << endl;
+		std::cout << "applying magic potion " << endl;
 		strength = 10;
 		magic = 100;
 
@@ -112,7 +112,7 @@ struct player {
 
 	//all this is doing is setting the stats back to the original state 
 	void clear_potion(player) {
-		cout << "cleared potion effects" << endl;
+		std::cout << "cleared potion effects" << endl;
 		health = 30;
 		speed = 10;
 		strength = 15;
@@ -136,37 +136,37 @@ struct player {
 		//depending on the case used it reads out the players number then the changed main stat 
 		switch (msg) {
 		case (potion_types::HEALTH):
-			cout << "   ---report--- player  " << id << " health boost  " << health << endl;
+			std::cout << "   ---report--- player  " << id << " health boost  " << health << endl;
 			
 
 			break;
 		case (potion_types::SPEED):
-			cout << "   ---report--- player  " << id << " speed boost: " << speed << endl;
+			std::cout << "   ---report--- player  " << id << " speed boost: " << speed << endl;
 
 			break;
 		case (potion_types::STRENGTH):
-			cout << "   ---report--- player  " << id << " strength boost " << strength << endl;
+			std::cout << "   ---report--- player  " << id << " strength boost " << strength << endl;
 
 			break;
 		
 		case (potion_types::MAGIC):
-			cout << "   ---report--- player  " << id << " magic boost " << magic << endl;
+			std::cout << "   ---report--- player  " << id << " magic boost " << magic << endl;
 
 			break;
 			
 		case (potion_types::CLEAR):
-			cout << "   ---report--- player  " << id << " potions clearing" << endl;
+			std::cout << "   ---report--- player  " << id << " potions clearing" << endl;
 
 			break;
 
 			//just reports all the stats to the player to show all the stat changes and not just one 
 		case (potion_types::REPORT):
-			cout << "   ---report--- player  " << id << " current stats" << endl;
-			cout << "player health " << health << endl;
-			cout << "player speed " << speed << endl;
-			cout << "player strength " << strength << endl;
-			cout << "player magic " << magic << endl;
-			cout << "--------------- " << endl;
+			std::cout << "   ---report--- player  " << id << " current stats" << endl;
+			std::cout << "player health " << health << endl;
+			std::cout << "player speed " << speed << endl;
+			std::cout << "player strength " << strength << endl;
+			std::cout << "player magic " << magic << endl;
+			std::cout << "--------------- " << endl;
 			break;
 
 		}
@@ -213,7 +213,7 @@ int main()
 
 
 
-	cout << " thanks for playing " << endl;
-	cout << "---------- end of code ----------" << endl;
+	std::cout << " thanks for playing " << endl;
+	std::cout << "---------- end of code ----------" << endl;
 }
 
