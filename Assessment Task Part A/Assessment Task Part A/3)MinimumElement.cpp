@@ -31,14 +31,14 @@ void smallest(int array[], int arraySize)
         {
 
             // reading out the array number 
-            cout << "---------------------------------- " << endl;
-            cout << "array current is " << array[i] << endl;
+            std::cout << "---------------------------------- " << endl;
+            std::cout << "array current is " << array[i] << endl;
 
 
             // setting the smallest number from the array index
             current_smallest = array[i];
-            cout << "the current smallest is " << current_smallest << endl;
-            cout << "---------------------------------- " << endl;
+            std::cout << "the current smallest is " << current_smallest << endl;
+            std::cout << "---------------------------------- " << endl;
         }
 
         // if it isn't smaller than the current smallest 
@@ -46,17 +46,17 @@ void smallest(int array[], int arraySize)
         {
 
             // just saying that the number isn't smaller than the one that is set as the current smallest 
-            cout << "---------------------------------- " << endl;
-            cout << "array current  " << array[i] << endl;
-            cout << "the current smallest is " << current_smallest << endl;
-            cout << "---------------------------------- " << endl;
+            std::cout << "---------------------------------- " << endl;
+            std::cout << "array current  " << array[i] << endl;
+            std::cout << "the current smallest is " << current_smallest << endl;
+            std::cout << "---------------------------------- " << endl;
         }
 
     }
 
 
     //reciting the smallest number and ending the code
-    cout << "the  smallest number was " << current_smallest << endl;
+    std::cout << "the  smallest number was " << current_smallest << endl;
    
 } 
 
@@ -92,6 +92,6 @@ int main()
 
    
     
-    cout << "--------- end of code---------" << endl;
+    std::cout << "--------- end of code---------" << endl;
     return 0;
 }
