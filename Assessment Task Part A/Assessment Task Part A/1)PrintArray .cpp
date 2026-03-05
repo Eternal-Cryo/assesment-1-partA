@@ -23,14 +23,14 @@ void readArray(int array[], int arraySize)
         // the if statments cycling from 0-9     
         if (i == arraySize-1)
         {       //read out array index number 9 specificly
-            cout << array[i] << endl;
+            std::cout << array[i] << endl;
 
 
         }
         //if it isnt index number 9
         else if (i != arraySize-1)
         {   // read out each indexs number and add a comma
-            cout << array[i] << ",";
+            std::cout << array[i] << ",";
         }
 
     }
@@ -46,9 +46,8 @@ int main()
 {
     //1) print array
     // numbers involved in the array
-    int array_numbers[] = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3};
-    
-    
+    int array_numbers[10] = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3};
+     
     //reading out the array
     readArray(array_numbers, 10);
 
@@ -57,7 +56,7 @@ int main()
    
 
 
-    cout << " end of script" << endl;
+    std::cout << " end of script" << endl;
 
 
 }
