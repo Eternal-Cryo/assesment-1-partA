@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 #include <string>
+#include <cassert>
 //You are to make a function that calculates hit accuracy in an FPS.Your function will take two integer arguments, (number of hits, and number of shots fired) and return an int(rounded down) to represent the accuracy, as a percentage from 0 to 100.
 //Do NOT use any built - in rounding or math functions.
 //Use an assert() to confirm the number of hits isn’t greater than the number of shots fired and both are greater or equal to 0.
@@ -14,7 +15,7 @@ using namespace std;
 //0, 0 =	0
 //Ensure all asserts() pass when you build and run.
 //Commit this to version control.
-void accuracy(float hit, float totalfired )
+int accuracy(float hit, float totalfired )
 {
 		int percent = 0;
 		
@@ -31,6 +32,7 @@ void accuracy(float hit, float totalfired )
 			{
 
 				std::cout << "your accuracy is 0%" << endl;
+				return 0;
 			}
 
 
@@ -46,7 +48,7 @@ void accuracy(float hit, float totalfired )
 
 				std::cout << "your accuracy is " << percent << "%" << endl;
 
-
+				return percent;
 			}
 
 
@@ -65,11 +67,11 @@ int main()
 
 
 		
-		accuracy(3, 4);
-		accuracy(1, 2);
-		accuracy(13, 13);
-		accuracy(21, 173);
-		accuracy(0, 0);
+		assert(accuracy(3, 4) == 75);
+		assert(accuracy(1, 2) == 50);
+		assert(accuracy(13, 13) == 100);
+		assert(accuracy(21, 173) == 12);
+		assert(accuracy(0, 0) == 0);
 
 		//a simple while loop to keep the sample repeating until the player wants to go
 		while (userInput != "exit")
