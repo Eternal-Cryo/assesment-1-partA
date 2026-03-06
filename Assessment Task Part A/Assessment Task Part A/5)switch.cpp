@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 #include <string>
-
+#include <cassert>
 
 //You will write a function that takes an enum for a potion type and a Player struct and use a switch statement to apply the following effects.Your function should return the new altered Player.
 //
@@ -41,13 +41,66 @@ struct player {
 	MAGIC,
 
 	// clearing any changes
-	CLEAR,
-	//reporting the stats
-	REPORT,
+	CLEAR	
+	
 	};
 	
 	
 	
+	// the reporting system to house all of the cases that could be called Upon 
+	int player_Report(player& player, potion_types potion) {
+		//depending on the case used it reads out the players number then the changed stat 
+		switch (potion) 
+		{
+		case (potion_types::HEALTH):
+			std::cout << "   ---report--- player  " << id << " health boost  " << health << endl;
+			player.Health_potion(player);
+
+			//just reports all the stats to the player to show all the stat changes and not just one 
+			player.report(player);
+
+			return 1;
+			break;
+		case (potion_types::SPEED):
+			std::cout << "   ---report--- player  " << id << " speed boost: " << speed << endl;
+			player.speed_potion(player);
+			//reports 
+			player.report(player);
+			
+			return 2;
+			break;
+		case (potion_types::STRENGTH):
+			std::cout << "   ---report--- player  " << id << " strength boost " << strength << endl;
+			player.strength_potion(player);
+			//reports  
+			player.report(player);
+			return 3;
+			break;
+		
+		case (potion_types::MAGIC):
+			std::cout << "   ---report--- player  " << id << " magic boost " << magic << endl;
+			player.magic_potion(player);
+			//reports 
+			player.report(player);
+
+			return 4;
+			break;
+			
+		case (potion_types::CLEAR):
+			std::cout << "   ---report--- player  " << id << " potions clearing" << endl;
+			player.clear_potion(player);
+			//reports 
+			player.report(player);
+			
+			return 0;
+			break;
+
+					
+			
+			
+
+		}
+	}
 		
 	
 
@@ -55,21 +108,16 @@ struct player {
 
 
 	//	HEALTH : sets health to 100
-	//void function then calling apon the player struct
+	//int function then calling apon the player struct
 	void Health_potion(player) {
 	 
 
 		std::cout << "applying health potion " << endl;
 		health = 100; // stat changes 
 
-		//calls for the changes to the stats 
-		player_Report(potion_types::HEALTH);
-		//then calls for the stats 
-		player_Report(potion_types::REPORT);
-
+		
 	};
-
-//	SPEED : sets speed to 50, health reduced by 10, strength reduced by 10, magic set to 10
+	//	SPEED : sets speed to 50, health reduced by 10, strength reduced by 10, magic set to 10
 	void speed_potion(player) {
 		std::cout << "applying speed potion " << endl;
 		
@@ -80,12 +128,9 @@ struct player {
 		magic = 10;
 
 
-		player_Report(potion_types::SPEED);
-		player_Report(potion_types::REPORT);
+		
 	};
-
-//	STRENGTH : sets speed to 25, health multiplied by 2, strength set to 200
-
+	//	STRENGTH : sets speed to 25, health multiplied by 2, strength set to 200
 	void strength_potion(player) {
 		std::cout << "applying strength potion " << endl;
 		health = (health * 2);
@@ -93,10 +138,10 @@ struct player {
 		strength = 200;
 		
 
-		player_Report(potion_types::STRENGTH);
-		player_Report(potion_types::REPORT);
+		
+
+		
 	};
-	
 	//	MAGIC sets strength to 10, magic set to 100
 	void magic_potion(player) {
 		std::cout << "applying magic potion " << endl;
@@ -104,12 +149,10 @@ struct player {
 		magic = 100;
 
 
-		player_Report(potion_types::MAGIC);
-		player_Report(potion_types::REPORT);
+		
+		
 		
 	};
-
-
 	//all this is doing is setting the stats back to the original state 
 	void clear_potion(player) {
 		std::cout << "cleared potion effects" << endl;
@@ -117,13 +160,23 @@ struct player {
 		speed = 10;
 		strength = 15;
 		magic = 30;
-		player_Report(potion_types::CLEAR);
-		player_Report(potion_types::REPORT);
+		
 
+		
 	};
+	//couts all of the stats 
+	void report(player)
+	{
+		//just reports all the stats to the player to show all the stat changes and not just one 
+		std::cout << "   ---report--- player  " << id << " current stats" << endl;
+		std::cout << "player health " << health << endl;
+		std::cout << "player speed " << speed << endl;
+		std::cout << "player strength " << strength << endl;
+		std::cout << "player magic " << magic << endl;
+		std::cout << "--------------- " << endl;
 
-	
-	
+
+	}
 
 	
 
@@ -131,46 +184,6 @@ struct player {
 
 
 	
-	// the reporting system to house all of the cases that could be called apon and mainly tells the player what has been used and what stat has been buffed the most 
-	void player_Report(potion_types msg) {
-		//depending on the case used it reads out the players number then the changed main stat 
-		switch (msg) {
-		case (potion_types::HEALTH):
-			std::cout << "   ---report--- player  " << id << " health boost  " << health << endl;
-			
-
-			break;
-		case (potion_types::SPEED):
-			std::cout << "   ---report--- player  " << id << " speed boost: " << speed << endl;
-
-			break;
-		case (potion_types::STRENGTH):
-			std::cout << "   ---report--- player  " << id << " strength boost " << strength << endl;
-
-			break;
-		
-		case (potion_types::MAGIC):
-			std::cout << "   ---report--- player  " << id << " magic boost " << magic << endl;
-
-			break;
-			
-		case (potion_types::CLEAR):
-			std::cout << "   ---report--- player  " << id << " potions clearing" << endl;
-
-			break;
-
-			//just reports all the stats to the player to show all the stat changes and not just one 
-		case (potion_types::REPORT):
-			std::cout << "   ---report--- player  " << id << " current stats" << endl;
-			std::cout << "player health " << health << endl;
-			std::cout << "player speed " << speed << endl;
-			std::cout << "player strength " << strength << endl;
-			std::cout << "player magic " << magic << endl;
-			std::cout << "--------------- " << endl;
-			break;
-
-		}
-	};
 	
 
 
@@ -186,32 +199,32 @@ int main()
 	// the players stats 
 	player player01 = {0, 30, 10,  15, 30, };
 
-	// giving the health potion then clearing it 
-	player01.Health_potion(player01);
-	player01.clear_potion(player01);
+	
 
+
+
+	// giving the health potion then clearing it wont work if it doesnt return the correct number 
+	assert(player01.player_Report(player01, player::HEALTH) == 1);
+	assert(player01.player_Report(player01, player::CLEAR) == 0);
+	
 	// giving the speed potion then clearing it
-	player01.speed_potion(player01);
-	player01.clear_potion(player01);
-
-	// giving the strength potion then clearing it
-	player01.strength_potion(player01);
-	player01.clear_potion(player01);
-
-	// giving the magic potion then clearing it
-	player01.magic_potion(player01);
-	player01.clear_potion(player01);
-
+	assert(player01.player_Report(player01, player::SPEED) == 2);
+	assert(player01.player_Report(player01, player::CLEAR) == 0);
+	
+	// giving the strength  potion t hen clearing it
+	assert(player01.player_Report(player01, player::STRENGTH) == 3);
+	assert(player01.player_Report(player01, player::CLEAR) == 0);
+	
+	// giving the magic potion then  clearing it
+	assert(player01.player_Report(player01, player::MAGIC) == 4);
+	assert(player01.player_Report(player01, player::CLEAR) == 0);
 
 	//applying one of each potion
-	player01.Health_potion(player01);
-	player01.speed_potion(player01);
-	player01.strength_potion(player01);
-	player01.magic_potion(player01);
-
-
-
-
+		/*player01.player_Report(player01, player::HEALTH);
+		player01.player_Report(player01, player::SPEED);
+		player01.player_Report(player01, player::STRENGTH);
+		player01.player_Report(player01, player::MAGIC);
+*/
 
 	std::cout << " thanks for playing " << endl;
 	std::cout << "---------- end of code ----------" << endl;
