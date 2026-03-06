@@ -74,20 +74,20 @@ int main()
 		assert(accuracy(0, 0) == 0);
 
 		//a simple while loop to keep the sample repeating until the player wants to go
-		while (userInput != "exit")
-		{
-			//grabbing the infomation from the player on their accuracy
-			std::cout << "how many did you get on target?" << endl;
-			std::cin >> hit;
-			std::cout << "how many did you fire?" << endl;
-			std::cin >> totalfired;
+		//while (userInput != "exit")
+		//{
+		//	//grabbing the infomation from the player on their accuracy
+		//	std::cout << "how many did you get on target?" << endl;
+		//	std::cin >> hit;
+		//	std::cout << "how many did you fire?" << endl;
+		//	std::cin >> totalfired;
 
-			accuracy(hit, totalfired);
+		//	accuracy(hit, totalfired);
 
-			// to keep the loop going or to stop it
-			std::cout << "would you like to go again?" << endl;
-			std::cin >> userInput;
-		}
+		//	// to keep the loop going or to stop it
+		//	std::cout << "would you like to go again?" << endl;
+		//	std::cin >> userInput;
+		//}
 		
 
 
