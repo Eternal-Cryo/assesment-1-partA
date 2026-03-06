@@ -96,25 +96,25 @@ int main()
 
 	}
 	
+	// a while loop for testing
+		//while  (exit != "exit")
 
-		while  (exit != "exit")
-
-		{ 
-			std::cin.clear();
-			// getting a number from the player due not it doesnt like anything but numbers
-			std::cout << "input a number from 1-20" << endl;
-			std::cin >> player_number;
-
-
-			//calling the funtion and giving it the number
-			fizzBuzz(player_number);
+		//{ 
+		//	std::cin.clear();
+		//	// getting a number from the player due not it doesnt like anything but numbers
+		//	std::cout << "input a number from 1-20" << endl;
+		//	std::cin >> player_number;
 
 
-			//asking if the player is ready to end program
-			std::cout << "want to try another number or exit" << endl;
-			std::cin >> exit;
-		
-		}
+		//	//calling the funtion and giving it the number
+		//	fizzBuzz(player_number);
+
+
+		//	//asking if the player is ready to end program
+		//	std::cout << "want to try another number or exit" << endl;
+		//	std::cin >> exit;
+		//
+		//}
 			std::cout << "--------- end of code---------" << endl;
 }
 
