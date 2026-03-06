@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 using namespace std;
 
 // You are to make a function that finds and returns the smallest element of an int array.
@@ -13,7 +14,7 @@ using namespace std;
     //    Test and commit this to version control.
 
 
-void smallest(int array[], int arraySize)
+int smallest(int array[], int arraySize)
 {   
     
     int i = 0;
@@ -57,9 +58,9 @@ void smallest(int array[], int arraySize)
 
     //reciting the smallest number and ending the code
     std::cout << "the  smallest number was " << current_smallest << endl;
-   
-} 
+   return current_smallest;
 
+}  
 
 
 
@@ -84,7 +85,7 @@ int main()
     
    
 
-   
+   assert(smallest(number_array, 20) == 2);
     smallest(number_array, 20);
     
     
